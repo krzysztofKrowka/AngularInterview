@@ -5,7 +5,7 @@ import { EditType, ELEMENT_DATA, PeriodicElement } from "./data";
   providedIn:"root"
 })
 export class PeriodicTableService{
-  async getAll (){
+  async getElements (){
     await sleep(500)
     return ELEMENT_DATA
   }
@@ -22,9 +22,21 @@ export class PeriodicTableService{
       return element
 
   }
+  async editFilter(filter:string,elements:PeriodicElement[]){
+      elements.forEach(e =>{
+
+        e.load = false
+        for (const [key, value] of Object.entries(e)) {
+          if(value.toString().includes(filter) && key != "load" && key != "id"){
+            e.load = true
+          }
+        }
+      })
+      return elements.filter((e:PeriodicElement) => e.load)
+  }
 }
 
-async function sleep(ms:number){
+export async function sleep(ms:number){
   return new Promise(result =>{
     setTimeout(result,ms);
   })

@@ -37,4 +37,4 @@ export  interface DialogData {
     element: PeriodicElement
   }
 
-export type EditType = keyof PeriodicElement
+export type EditType = "position" | "name" | "weight" | "symbol"

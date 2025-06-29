@@ -3,10 +3,10 @@
   font-family: Arial;
 }
 
-input[type="text"] {
-  margin-bottom: 10px;
-  padding: 5px;
-  width: 300px;
+.filterInput{
+  font-size: 24px;
+  padding-bottom: 0px;
+  padding-top: 30px;
 }
 
 table {

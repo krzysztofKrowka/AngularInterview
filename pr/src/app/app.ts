@@ -11,6 +11,7 @@ import { FormsModule, NgModel } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogActions, MatDialogClose, MatDialogRef } from '@angular/material/dialog';
 import { MatButton } from '@angular/material/button';
 import { DialogData, EditType, PeriodicElement } from './data';
+import { sleep } from './books-service';
 
 @Component({
   imports:[CommonModule,
@@ -40,12 +41,12 @@ export class App {
 
   }
   constructor(public dialog: MatDialog) {}
-  editStart: boolean = false
   editType: EditType | undefined
-  editValue: string = ''
+  editValue: string = ""
   elementToEdit: PeriodicElement | null= null
+  filter: string = ""
   async loadElements(){
-    await this.store.loadAll()
+    await this.store.loadElements()
   }
 
   async editElement(element:PeriodicElement,type:EditType){
@@ -67,6 +68,14 @@ export class App {
         this.editValue = ""
         this.elementToEdit = null
       }
+  }
+
+  async editFilter(){
+    let tempFilter = this.filter;
+    await sleep(2000)
+    if(tempFilter == this.filter){
+      await this.store.editFilter(this.filter)
+    }
   }
 
   openDialog(): void {
