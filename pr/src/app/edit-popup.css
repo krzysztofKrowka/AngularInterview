@@ -1,0 +1,12 @@
+div{
+  margin:10px;
+}
+h1,.content{
+  margin-left: 20px;
+}
+.cancel{
+  left: 0;
+}
+input{
+  font-size: 22px;
+}

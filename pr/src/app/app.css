@@ -1,0 +1,47 @@
+.container {
+  padding: 20px;
+  font-family: Arial;
+}
+
+input[type="text"] {
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 300px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+tr{
+  border: 1px solid #ccc;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.modal-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
